@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Простой, удобный, а также мобильный справочник по программированию для начинающих">
+    <meta name="keywords" content="devreader, android, html, js, css, sass, javascript, development, ui, design, corex">
+    <meta name="author" content="DevReader Project">
+    <meta name="generator" content="VSCode">
+    <meta name="msapplication-TileColor" content="#202125">
+    <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#202125">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/res/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://raw.githubusercontent.com/devreader/devreader.github.io/master/manifest.json">
+    <link href="https://rawcdn.githack.com/devreader/devreader.github.io/802a58ddff1de668afa7bacef88fbdb9152cb285/assets/css/corex.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163812022-1"></script>
+    <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-163812022-1");</script>
+
+    <title>2.6 | JavaScript | DevReader</title>
+
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Взаимодействие: alert, prompt, confirm</h1>
+      <p>Так как мы будем использовать браузер как демо-среду, нам нужно познакомиться с несколькими функциями его интерфейса, а именно: <code>alert</code>, <code>prompt</code> и <code>confirm</code>.</p>
+    </header>
+
+    <ul class="crx-breadcrumbs">
+      <li><a href="/index.html">Домашняя страница</a></li>
+      <li>Веб-разработка</li>
+      <li><a href="../../../index.html">JavaScript</a></li>
+      <li crx-breadcrumbs="current">Взаимодействие: alert, prompt, confirm</li>
+    </ul>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2>alert</h2>
+          <p>С этой функцией мы уже знакомы. Она показывает сообщение и ждёт, пока пользователь нажмёт кнопку «ОК».</p>
+          <p>Например:</p>
+          <pre class="hljs"><code>
+alert("Hello");
+          </code></pre>
+          <p><button class="crx-button" onclick="alert('Hello');">Показать Alert</button></p>
+          <p>Это небольшое окно с сообщением называется модальным окном. Понятие модальное означает, что пользователь не может взаимодействовать с интерфейсом остальной части страницы, нажимать на другие кнопки и т.д. до тех пор, пока взаимодействует с окном. В данном случае – пока не будет нажата кнопка «OK».</p>
+          <h2>prompt</h2>
+          <p>Функция <code>prompt</code> принимает два аргумента:</p>
+          <pre class="hljs"><code>
+result = prompt(title, [default]);
+          </code></pre>
+          <p>Этот код отобразит модальное окно с текстом, полем для ввода текста и кнопками OK/Отмена.</p>
+          <ul>
+            <li><code>title</code> — текст для отображения в окне</li>
+            <li><code>default</code> — необязательный второй параметр, который устанавливает начальное значение в поле для текста в окне</li>
+          </ul>
+          <div class="crx-alert-layout crx-alert-layout_info">
+            <h4><span class="icon icon-info"></span> Квадратные скобки в синтаксисе <code>[...]</code></h4>
+            <p>Квадратные скобки вокруг <code>default</code> в описанном выше синтаксисе означают, что параметр факультативный, необязательный.</p>
+          </div>
+          <p>Пользователь может напечатать что-либо в поле ввода и нажать OK. Введённый текст будет присвоен переменной <code>result</code>. Пользователь также может отменить ввод нажатием на кнопку «Отмена» или нажав на клавишу Esc. В этом случае значением <code>result</code> станет <code>null</code>.</p>
+          <p>Вызов <code>prompt</code> возвращает текст, указанный в поле для ввода, или <code>null</code>, если ввод отменён пользователем.</p>
+          <p>Например:</p>
+          <pre class="hljs"><code>
+let age = prompt('Сколько тебе лет?', 100);
+
+alert(`Тебе ${age} лет!`); // Тебе 100 лет!
+          </code></pre>
+          <div class="crx-alert-layout crx-alert-layout_warning">
+            <h4><span class="icon icon-attention"></span> Для IE: всегда устанавливайте значение по умолчанию</h4>
+            <p>Второй параметр является необязательным, но если не указать его, то Internet Explorer вставит строку <code>"undefined"</code> в поле для ввода.</p>
+            <p>Запустите код в Internet Explorer и посмотрите на результат:</p>
+            <pre class="hljs"><code>
+let test = prompt("Test");
+            </code></pre>
+            <p>Чтобы <code>prompt</code> хорошо выглядел в IE, рекомендуется всегда указывать второй параметр:</p>
+            <pre class="hljs"><code>
+let test = prompt("Test", ''); // <-- для IE
+            </code></pre>
+          </div>
+          <h2>confirm</h2>
+          <p>Синтаксис:</p>
+          <pre class="hljs"><code>
+result = confirm(question);
+          </code></pre>
+          <p>Функция <code>confirm</code> отображает модальное окно с текстом вопроса <code>question</code> и двумя кнопками: OK и Отмена.</p>
+          <p>Результат – <code>true</code>, если нажата кнопка OK. В других случаях – <code>false</code>.</p>
+          <p>Например:</p>
+          <pre class="hljs"><code>
+let isBoss = confirm("Ты здесь главный?");
+
+alert( isBoss ); // true, если нажата OK
+          </code></pre>
+          <h2>Итого</h2>
+          <p>Мы рассмотрели 3 функции браузера для взаимодействия с пользователем:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>alert</th>
+                <th>prompt</th>
+                <th>confirm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>показывает сообщение.</td>
+                <td>показывает сообщение и запрашивает ввод текста от пользователя. Возвращает напечатанный в поле ввода текст или <code>null</code>, если была нажата кнопка «Отмена» или <kbd>Esc</kbd> с клавиатуры.</td>
+                <td>показывает сообщение и ждёт, пока пользователь нажмёт OK или Отмена. Возвращает <code>true</code>, если нажата OK, и <code>false</code>, если нажата кнопка «Отмена» или <kbd>Esc</kbd> с клавиатуры.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Все эти методы являются модальными: останавливают выполнение скриптов и не позволяют пользователю взаимодействовать с остальной частью страницы до тех пор, пока окно не будет закрыто.</p>
+          <p>На все указанные методы распространяются два ограничения:</p>
+          <ol>
+            <li>Расположение окон определяется браузером. Обычно окна находятся в центре.</li>
+            <li>Визуальное отображение окон зависит от браузера, и мы не можем изменить их вид.</li>
+          </ol>
+          <p>Такова цена простоты. Есть другие способы показать более приятные глазу окна с богатой функциональностью для взаимодействия с пользователем, но если «навороты» не имеют значения, то данные методы работают отлично.</p>
+        </div>
+        <div class="col-12">
+          <hr>
+          <h3>Задачи</h3>
+          <p>На сайте <a href="https://learn.javascript.ru/">learn.javascript.ru</a>, помимо оригинала этой статьи, можно выполнить задачи по данной теме.</p>
+          <ul class="crx-list">
+            <li crx-list="title">Список задач</li>
+            <li onclick="location.href='https://learn.javascript.ru/alert-prompt-confirm#prostaya-stranitsa'">
+              Простая страница
+              <p>Создайте страницу, которая спрашивает имя у пользователя и выводит его.</p>
+            </li>
+          </ul>
+        </div>
+      </div><!-- .row -->
+    </div><!-- .container -->
+
+    <footer crx-footer="centered">
+      <p>Материалы в данном разделе были позаимствованы с ресурса <a href="https://learn.javascript.ru/">learn.javascript.ru</a>. Разрешение на публикацию было получено от одного из авторов ресурса. Запрещено любое коммерческое использование материалов, в том числе воспроизведение текстов статей или их фрагментов с целью коммерческой реализации права доступа к указанным материалам.</p>
+    </footer>
+
+    <script src="https://rawcdn.githack.com/devreader/devreader.github.io/a26c10ff5b347372d85c845102a138bc26696951/assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
